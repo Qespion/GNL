@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 10:04:29 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/23 13:07:18 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/30 10:29:57 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,36 @@
 
 int	main(int ac, char **av)
 {
-	int		fd;
 	char	*line;
 	int		i;
 
-	i = 1;
-	while (av[i])
-	{
-		printf ("%s\n", av[i]);
-		fd = open(av[i], 0);
-		while (get_next_line(fd, &line) == 0)
-		{
-			printf("%s\n", line);
-			ft_strdel(&line);
-		}
-		++i;
-	}
+	i = open(av[1], 0);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
+	printf("%d\n", get_next_line(i, &line));
+	printf("%s\n", line);
+	ft_strdel(&line);
 	return (0);
 }
