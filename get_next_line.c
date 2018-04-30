@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 12:43:02 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/30 16:15:20 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/30 18:37:10 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int		ft_read(t_struct *lst, char **line, const int fd)
 	int		ret;
 	char	buff[BUFF_SIZE + 1];
 	int		i;
+	char	*tmp;
 
 	while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
 	{
@@ -65,16 +66,16 @@ int		ft_read(t_struct *lst, char **line, const int fd)
 		{
 			i = 0;
 			*line = ft_strfjoin(*line, buff);
+			tmp = *line;
 			lst->str = ft_strsub(buff, find_n(buff), BUFF_SIZE - find_n(buff));
+			ft_strdel(&tmp);
 			while ((*line)[i] != '\n')
 				i++;
 			(*line)[i] = '\0';
 			return (1);
 		}
 	}
-	if (ret == -1)
-		return (-1);
-	return (0);
+	return ret == -1 ? -1 : 0;
 }
 
 int		get_next_line(const int fd, char **line)
@@ -97,7 +98,5 @@ int		get_next_line(const int fd, char **line)
 	ruff = ft_read(lst, line, fd);
 	if (ruff == -1)
 		return (-1);
-	if ((*line)[0] != '\0' || ruff == 1)
-		return (1);
-	return (0);
+	return (*line)[0] != '\0' || ruff == 1 ? 1 : 0;
 }

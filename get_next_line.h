@@ -6,13 +6,13 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/14 16:17:57 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/30 16:15:33 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/30 18:02:43 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 100
+# define BUFF_SIZE 4
 # include <fcntl.h>
 # include <stdlib.h>
 # include <string.h>
