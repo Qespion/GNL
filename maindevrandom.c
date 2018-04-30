@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   maindevrandom.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/14 16:17:57 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/30 11:15:23 by oespion          ###   ########.fr       */
+/*   Created: 2018/04/28 18:26:36 by oespion           #+#    #+#             */
+/*   Updated: 2018/04/30 11:00:35 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 1
-# include <fcntl.h>
-# include <stdlib.h>
-# include <string.h>
-# include <limits.h>
-# include <stdio.h>
-# include "libft/includes/libft.h"
+#include "get_next_line.h"
 
-int				get_next_line(const int fd, char **line);
-
-typedef struct	s_struct
+int	main(int ac, char **av)
 {
-	char		*str;
-	int			fd;
-	int			start;
-}				t_struct;
+	char	*line;
+	int		i;
+	int		ret;
 
-#endif
+	i = open(av[1], 0);
+	while ((ret = get_next_line(i, &line)) > 0)
+	{
+		printf("%d\n", ret);
+		printf("%s\n", line);
+	}
+	return (0);
+}
