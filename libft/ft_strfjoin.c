@@ -12,7 +12,11 @@ char    *ft_strfjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_bzero(str, len + 1);
 	ft_strcat(str, s1);
-	free((char*)s1);
+	if (s1)
+	{
+		free((char*)s1);
+		s1 = NULL;
+	}
 	ft_strcat(str, s2);
 	return (str);
 }

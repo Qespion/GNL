@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 11:22:08 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/04 12:13:11 by oespion          ###   ########.fr       */
+/*   Updated: 2018/05/01 11:07:10 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (as)
+	if (as && *as)
 	{
 		free(*as);
 		*as = NULL;
