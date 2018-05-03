@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 12:43:02 by oespion           #+#    #+#             */
-/*   Updated: 2018/05/01 14:29:45 by oespion          ###   ########.fr       */
+/*   Updated: 2018/05/01 15:18:42 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,6 @@ int		get_next_line(const int fd, char **line)
 
 	if (!line || fd < 0 || fd > OPEN_MAX)
 		return (-1);
-	if (!&lst[fd])
-	{
-		lst->start = 0;
-		lst->str = 0;
-	}
 	*line = ft_strnew(BUFF_SIZE);
 	if (ft_strleft(&lst[fd], line) == 1)
 		return (1);

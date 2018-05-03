@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/14 16:17:57 by oespion           #+#    #+#             */
-/*   Updated: 2018/05/01 14:26:40 by oespion          ###   ########.fr       */
+/*   Updated: 2018/05/01 15:18:46 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int				get_next_line(const int fd, char **line);
 typedef struct	s_struct
 {
 	char		*str;
-	int			fd;
-	int			start;
 }				t_struct;
 
 #endif
